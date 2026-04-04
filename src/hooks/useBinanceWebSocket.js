@@ -46,7 +46,6 @@ export const useBinanceWebSocket = (symbol = 'btcusdt', interval = '1m') => {
     const [chartHistory, setChartHistory] = useState(null);
     const [orderBook, setOrderBook] = useState({ bids: [], asks: [] });
     const [currentPrice, setCurrentPrice] = useState(0);
-    const [trades, setTrades] = useState([]);
     const [isMock, setIsMock] = useState(false);
 
     const generateHistory = (s, i, targetPrice) => {
@@ -176,7 +175,7 @@ export const useBinanceWebSocket = (symbol = 'btcusdt', interval = '1m') => {
 
         fetchKlines();
 
-        const streams = `!ticker@arr/${symbol.toLowerCase()}@kline_${interval}/${symbol.toLowerCase()}@depth20@100ms/${symbol.toLowerCase()}@aggTrade`;
+        const streams = `!ticker@arr/${symbol.toLowerCase()}@kline_${interval}/${symbol.toLowerCase()}@depth20@100ms`;
         const ws = new WebSocket(`wss://stream.binance.com:9443/stream?streams=${streams}`);
         
         ws.onmessage = (e) => {
@@ -201,8 +200,6 @@ export const useBinanceWebSocket = (symbol = 'btcusdt', interval = '1m') => {
                     bids: data.bids.map(b => ({ price: +b[0], qty: +b[1] })),
                     asks: data.asks.map(a => ({ price: +a[0], qty: +a[1] }))
                 });
-            } else if (stream.includes('@aggTrade')) {
-                setTrades(prev => [{ id: data.a, price: +data.p, qty: +data.q, time: data.T, isBuyerMaker: data.m }, ...prev].slice(0, 30));
             }
         };
 
@@ -210,5 +207,5 @@ export const useBinanceWebSocket = (symbol = 'btcusdt', interval = '1m') => {
         return () => ws.close();
     }, [symbol, interval]);
 
-    return { isConnected, tickerData, chartData, chartHistory, orderBook, currentPrice, trades, isMock };
+    return { isConnected, tickerData, chartData, chartHistory, orderBook, currentPrice, isMock };
 };

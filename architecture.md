@@ -14,7 +14,7 @@ A high-performance, real-time financial data terminal built with modern web tech
 
 The application follows a **Unidirectional Data Flow** pattern:
 
-1.  **State Orchestration**: `App.jsx` acts as the root controller, managing user-specific state like `balance`, `portfolio`, and `tradeHistory`.
+1.  **State Orchestration**: `App.jsx` acts as the root controller, managing user-specific state like `balance` and `portfolio`.
 2.  **Resilient Data Ingestion**: The `useBinanceWebSocket` custom hook (V8 SYNC Engine) manages the lifecycle of data updates. It features a "Self-Healing" mechanism that automatically falls back to mock data if all API endpoints are unreachable.
 3.  **Context-less Props Drilling**: Data is passed down from `App` to `Layout`, and then distributed to specialized child components.
 4.  **Decoupled View Logic**: Each UI component in `/src/components` is responsible for its own rendering logic and local UI state, relying on props for financial data.
@@ -33,8 +33,8 @@ Displays live Bids and Asks with 100ms updates. It features market depth visuali
 ### 4. `CommandBar.jsx` & `StatusBar.jsx`
 The `CommandBar` allows for terminal-style asset switching (`/BTCUSDT`). The `StatusBar` provides real-time connectivity health and identifies when the terminal is in "LIVE" vs "MOCK" mode.
 
-### 5. `TradingPanel.jsx` & `TradeHistory.jsx`
-The transactional core. Users execute "Paper Trades" (Buy/Sell) which are calculated against live prices and logged in a persistent session history feed.
+### 5. `TradingPanel.jsx`
+The transactional core. Users execute "Paper Trades" (Buy/Sell) which are calculated against live prices.
 
 ### 6. `Watchlist.jsx` & `TickerTape.jsx`
 Global market monitoring. Featuring high-density layouts and custom `Sparkline` mini-charts to show 24h trends at a glance.
@@ -50,7 +50,6 @@ The terminal leverages a **Multi-Path Connectivity** strategy for high-fidelity 
     -   `!ticker@arr`: Global price updates for all major pairs.
     -   `${symbol}@kline_1s`: Ultra-high frequency 1-second candle building.
     -   `${symbol}@depth20@100ms`: High-speed Level 2 order book updates.
-    -   `${symbol}@aggTrade`: Real-time execution tape for actual trades across the exchange.
 -   **Self-Healing Fallback**: If the network is restricted, the engine initializes a **Volatility-Matched Mock Pulse** (250ms interval) to ensure the terminal remains functional for paper trading.
 
 ## 🎨 Design Philosophy

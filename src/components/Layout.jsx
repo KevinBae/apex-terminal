@@ -8,14 +8,13 @@ import TradingPanel from './TradingPanel';
 import Portfolio from './Portfolio';
 import CommandBar from './CommandBar';
 import StatusBar from './StatusBar';
-import TradeHistory from './TradeHistory';
 import NewsFeed from './NewsFeed';
 import './Layout.css';
 
 const Layout = ({ 
   isConnected, tickerData, chartData, chartHistory, orderBook, 
   currentPrice, balance, positions, onTrade, symbol, 
-  onSymbolChange, trades, interval, onIntervalChange, isMock
+  onSymbolChange, interval, onIntervalChange, isMock
 }) => {
   return (
     <div className="terminal-layout">
@@ -73,13 +72,8 @@ const Layout = ({
       <aside className="terminal-side">
         <div className="side-top">
           <div className="panel-header">ORDER BOOK (L2 DEPTH)</div>
-          <div className="panel-content orderbook-panel" style={{ flex: 2 }}>
+          <div className="panel-content orderbook-panel" style={{ flex: 1 }}>
             <OrderBook orderBook={orderBook} currentPrice={currentPrice} />
-          </div>
-          
-          <div className="panel-header">EXECUTION LOG</div>
-          <div className="panel-content trades-panel" style={{ flex: 1 }}>
-            <TradeHistory trades={trades} />
           </div>
         </div>
         <div className="side-bottom">

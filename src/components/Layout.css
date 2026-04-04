@@ -136,8 +136,8 @@
   position: relative;
 }
 
-/* Scroll area for trades and orderbook */
-.orderbook-panel, .trades-panel {
+/* Scroll area for orderbook */
+.orderbook-panel {
   overflow: hidden;
 }
 

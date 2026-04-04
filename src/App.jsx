@@ -7,11 +7,10 @@ import './App.css'
 function App() {
   const [symbol, setSymbol] = useState('btcusdt');
   const [interval, setInterval] = useState('1m');
-  const { isConnected, tickerData, chartData, chartHistory, orderBook, currentPrice, trades, isMock } = useBinanceWebSocket(symbol, interval);
+  const { isConnected, tickerData, chartData, chartHistory, orderBook, currentPrice, isMock } = useBinanceWebSocket(symbol, interval);
 
   const [balance, setBalance] = useState(100000);
   const [positions, setPositions] = useState({});
-  const [tradeHistory, setTradeHistory] = useState([]);
 
   const handleTrade = (type, amount, price, asset) => {
     const cost = amount * price;
@@ -22,7 +21,6 @@ function App() {
           ...prev,
           [asset]: (prev[asset] || 0) + amount
         }));
-        setTradeHistory(prev => [...prev, { type, amount, price, asset, cost, time: new Date() }]);
       } else {
         alert('Insufficient USDT balance');
       }
@@ -34,7 +32,6 @@ function App() {
           ...prev,
           [asset]: currentPos - amount
         }));
-        setTradeHistory(prev => [...prev, { type, amount, price, asset, cost, time: new Date() }]);
       } else {
         alert('Insufficient asset balance');
       }
@@ -54,7 +51,6 @@ function App() {
       onTrade={handleTrade}
       symbol={symbol}
       onSymbolChange={setSymbol}
-      trades={trades}
       interval={interval}
       onIntervalChange={setInterval}
       isMock={isMock}
