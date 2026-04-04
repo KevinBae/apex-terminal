@@ -1,0 +1,11 @@
+{
+  "name": "vite-project-management",
+  "version": "1.0.0",
+  "description": "Skills and workflows for managing Vite-based projects.",
+  "skills": [
+    "vite-build-review"
+  ],
+  "workflows": [
+    "build-review"
+  ]
+}

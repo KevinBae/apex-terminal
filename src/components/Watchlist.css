@@ -1,0 +1,64 @@
+.watchlist-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #000;
+  font-family: var(--font-mono);
+}
+
+.watchlist-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10px;
+}
+
+.watchlist-table th {
+  background-color: #0d0d0d;
+  color: #555;
+  padding: 4px 8px;
+  font-weight: 900;
+  text-transform: uppercase;
+  border-bottom: 1px solid #1a1e23;
+}
+
+.watchlist-table td {
+  padding: 4px 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.01);
+  cursor: pointer;
+}
+
+.watchlist-table tr:hover {
+  background-color: rgba(255,255,255,0.02);
+}
+
+.watchlist-table tr.active-row {
+  background-color: rgba(255, 153, 0, 0.1);
+}
+
+.watchlist-symbol {
+  font-weight: 900;
+  font-size: 11px;
+}
+
+.price-cell {
+  color: #fff;
+}
+
+.trend-cell {
+  padding: 0 !important;
+  width: 60px;
+}
+
+.left-align { text-align: left; }
+.right-align { text-align: right; }
+.center-align { text-align: center; }
+
+.watchlist-loading {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 9px;
+  font-weight: 900;
+}

@@ -1,0 +1,39 @@
+.terminal-status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 22px;
+  padding: 0 12px;
+  background-color: #000;
+  border-top: 1px solid #1a1e23;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: #fff;
+}
+
+.status-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.status-label {
+  color: #555;
+  font-weight: 900;
+}
+
+.status-value {
+  font-weight: 700;
+}
+
+.status-divider {
+  width: 1px;
+  height: 10px;
+  background-color: #1a1e23;
+}

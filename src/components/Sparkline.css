@@ -1,0 +1,9 @@
+.sparkline-svg {
+  display: block;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+tr:hover .sparkline-svg {
+  opacity: 1;
+}

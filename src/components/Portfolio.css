@@ -1,0 +1,72 @@
+.portfolio-risk-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #000;
+  font-family: var(--font-mono);
+}
+
+.risk-summary-header {
+  display: flex;
+  gap: 20px;
+  padding: 8px;
+  background-color: #0d0d0d;
+  border-bottom: 1px solid #1a1e23;
+}
+
+.risk-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.risk-label {
+  font-size: 8px;
+  color: #555;
+  font-weight: 900;
+}
+
+.risk-value {
+  font-size: 14px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.risk-table-wrapper {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.risk-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10px;
+}
+
+.risk-table th {
+  background-color: #0a0b0d;
+  color: #555;
+  padding: 4px 8px;
+  font-weight: 900;
+  text-transform: uppercase;
+  border-bottom: 1px solid #1a1e23;
+}
+
+.risk-table td {
+  padding: 4px 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.01);
+}
+
+.risk-table tr:hover {
+  background-color: rgba(255,255,255,0.02);
+}
+
+.left-align { text-align: left; }
+.right-align { text-align: right; }
+
+.empty-risk {
+  text-align: center;
+  padding: 20px;
+  color: #333;
+  font-weight: 900;
+}
