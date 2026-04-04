@@ -1,16 +1,48 @@
-# React + Vite
+# ⚡ APEX TERMINAL
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-density, professional-grade market data terminal built with React and Vite. Designed for speed, information density, and low-latency data visualization.
 
-Currently, two official plugins are available:
+![Terminal Preview](https://via.placeholder.com/1200x600/000000/FFD700?text=APEX+TERMINAL+V10)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+- **Real-Time Data Engine**: Powered by Binance WebSockets for sub-second price updates.
+- **V7 ATOMIC Rendering**: High-performance data synchronization across all components.
+- **Industrial Aesthetic**: True-black high-contrast theme optimized for long trading sessions.
+- **Professional Charting**: Integrated `lightweight-charts` with real-time price synchronization and horizontal price lines.
+- **Deep Liquidity Visualization**: Order book with real-time depth bars and spread calculation.
+- **Global Macro Ribbon**: Marquee-style ticker tape for broad market awareness.
+- **Unified Command Interface**: Keyboard-centric interaction for rapid symbol and timeframe switching.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Framework**: React 19
+- **Build Tool**: Vite 7
+- **Styling**: Vanilla CSS (High Performance)
+- **Data Source**: Binance WebSocket API / REST API
+- **Charts**: Lightweight Charts (TradingView)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📦 Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/apex-terminal.git
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+## 🌐 Deployment
+
+This project is optimized for deployment on **GitHub Pages**.
+
+```bash
+npm run deploy
+```
+
+---
+
+*Built for traders who value speed and precision.*
