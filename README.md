@@ -2,7 +2,7 @@
 
 A high-density, professional-grade market data terminal built with React and Vite. Designed for speed, information density, and low-latency data visualization.
 
-![Terminal Preview](https://via.placeholder.com/1200x600/000000/FFD700?text=APEX+TERMINAL+V10)
+![Terminal Preview](https://kevinbae.github.io/apex-terminal/)
 
 ## 🚀 Features
 
