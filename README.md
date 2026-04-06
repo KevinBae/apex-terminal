@@ -2,7 +2,7 @@
 
 A high-density, professional-grade market data terminal built with React and Vite. Designed for speed, information density, and low-latency data visualization.
 
-![Terminal Preview](https://kevinbae.github.io/apex-terminal/)
+[Terminal Preview](https://kevinbae.github.io/apex-terminal/)
 
 ## 🚀 Features
 
